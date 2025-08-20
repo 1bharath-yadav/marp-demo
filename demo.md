@@ -69,7 +69,9 @@ This slide uses a background image (fetched from a placeholder service) to demon
 ---
 
 ## Architecture (Quick)
+<!-- Background image -->
 
+![bg](arch.jpg)
 High-level components:
 
 1. Frontend — SPA
