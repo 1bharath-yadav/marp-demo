@@ -10,7 +10,7 @@ app = marimo.App()
 def _():
     import marimo as mo
 
-    mo.md("# Welcome to marimo! 🌊🍃")
+    mo.md("Hi 24f1001694@ds.study.iitm.ac.in")
     return (mo,)
 
 
