@@ -9,8 +9,9 @@ app = marimo.App()
 @app.cell
 def _():
     import marimo as mo
+    mail = "24f1001694@ds.study.iitm.ac.in"
 
-    mo.md("Hi 24f1001694@ds.study.iitm.ac.in")
+    mo.md(f"Hi {mail}, welcome to the marimo tutorial notebook!")
     return (mo,)
 
 
