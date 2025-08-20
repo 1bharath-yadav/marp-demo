@@ -6,6 +6,7 @@ theme: custom
 paginate: true
 math: true
 ---
+<!-- _footer: 24f1001694@ds.study.iitm.ac.in -->
 
 <style>
 @theme custom {
