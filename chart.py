@@ -1,5 +1,4 @@
 # chart.py
-# Author: Technical Writer
 # Contact: 24f1001694@ds.study.iitm.ac.in
 
 import seaborn as sns
@@ -9,7 +8,6 @@ import numpy as np
 
 
 def generate_synthetic_engagement_data():
-    # Simulate customer engagement (hours spent) for user segments over days
     np.random.seed(42)
     segments = ['New', 'Returning', 'Premium', 'Churn-risk']
     days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -20,13 +18,15 @@ def generate_synthetic_engagement_data():
 
 
 def create_and_save_heatmap(df):
-    sns.set_style('whitegrid')               # professional styling
-    sns.set_context('talk')                 # presentation-ready text sizes
+    sns.set_style('whitegrid')
+    sns.set_context('talk')
 
-    plt.figure(figsize=(8, 8), dpi=64)       # 8in × 64 DPI = 512 px
-    # perceptually uniform palette
+    # Create figure with reasonable canvas beyond 512px to allow tight layout
+    fig = plt.figure(figsize=(8, 8), dpi=64)
+    # After creating figure, force width and height in pixels:
+    fig.set_size_inches(512/fig.dpi, 512/fig.dpi)
+
     cmap = sns.color_palette('viridis', as_cmap=True)
-
     ax = sns.heatmap(
         df,
         cmap=cmap,
@@ -41,8 +41,8 @@ def create_and_save_heatmap(df):
     ax.set_xlabel('Day of Week')
     ax.set_ylabel('Customer Segment')
 
-    plt.tight_layout()
-    plt.savefig('chart.png', dpi=64, bbox_inches='tight')
+    plt.tight_layout(pad=0.5)  # consistent padding
+    plt.savefig('chart.png', dpi=64)
     plt.close()
 
 
