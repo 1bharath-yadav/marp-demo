@@ -103,6 +103,145 @@ Use this slide to document performance guarantees and reasoning.
 
 ---
 
+## Themes & Built-ins
+
+Marp ships with several built-in themes. Switch by changing the `theme:` front-matter (example shown below).
+
+```yaml
+---
+marp: true
+title: Example
+theme: gaia   # or: default, uncover
+paginate: true
+math: true
+---
+```
+
+This deck uses a `custom` theme defined via `@theme` above, but you can swap to `gaia` or `default` for different looks.
+
+---
+
+## Image sizing examples
+
+- Regular image:
+
+![](arch.jpg)
+
+- Set width:
+
+![width:320px](arch.jpg)
+
+- Set height:
+
+![height:180px](arch.jpg)
+
+- Both width & height:
+
+![w:320 h:180](arch.jpg)
+
+---
+
+## Background image variants
+
+<!-- Background image -->
+
+![bg](arch.jpg)
+
+![bg fit](arch.jpg)
+
+![bg cover](arch.jpg)
+
+<!-- Multiple backgrounds -->
+
+![bg left](arch.jpg)
+![bg right](arch.jpg)
+
+---
+
+<!-- _header: **Docs — Product** -->
+<!-- _footer: _Draft — Internal_ -->
+
+## Directives & Slide Metadata
+
+You can control slides with HTML comments (Marp directives). Examples above include background instructions and header/footer.
+
+<!-- _backgroundColor: #123456 -->
+
+This slide shows how to set a custom background color for a slide.
+
+<!-- _color: red -->
+
+This text would become red using a `_color` directive on the slide.
+
+---
+
+## Code highlighting
+
+```python
+def hello(name: str) -> None:
+		print(f"Hello, {name}!")
+
+hello("Marp")
+```
+
+```javascript
+console.log('Hello, Marp');
+```
+
+---
+
+## Math examples
+
+Inline math: $E = mc^2$
+
+Block math:
+
+$$
+\frac{d}{dx}e^x = e^x
+$$
+
+And the algorithmic slide above shows:
+
+$$T(n) = 2T\left(\frac{n}{2}\right) + n = \Theta(n \log n)$$
+
+---
+
+## Tables and Lists
+
+| Item | Cost |
+| ---- | ---- |
+| A    | $1   |
+| B    | $2   |
+
+- Bullet point
+	- Sub-point
+		- Sub-sub-point
+
+1. Numbered list
+2. Second item
+
+---
+
+## Exporting & Build Notes
+
+Export to common formats with the Marp CLI:
+
+```bash
+# HTML
+marp demo.md -o demo.html
+
+# PDF
+marp demo.md --pdf
+
+# PowerPoint
+marp demo.md --pptx
+```
+
+If you're using the VS Code Marp extension, use the Command Palette to export or start watch mode.
+
+---
+
+
 ## Contact & Next Steps
 
 Email: 24f1001694@ds.study.iitm.ac.in
